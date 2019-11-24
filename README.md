@@ -22,7 +22,7 @@ studentTable.AddColumn(s => s.Grades.Science);
 studentTable.AddColumn(s => s.Grades.Economics);
 studentTable.AddColumn(s => s.Grades.History);
 ```
-![alt text](https://raw.githubusercontent.com/dylantowler/SimpleExcelReport/ReadMeImages/SuperSimple.PNG)
+![alt text](https://raw.githubusercontent.com/dylantowler/SimpleExcelReport/master/ReadMeImages/SuperSimple.PNG)
 
 ## Custom display and conditional formatting
 ```c#
