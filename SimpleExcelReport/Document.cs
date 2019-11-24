@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Office.Interop.Excel;
 
-namespace ExcelReport
+namespace SimpleExcelReport
 {
     public class Document : IDisposable
     {

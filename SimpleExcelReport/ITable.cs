@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Excel;
 
-namespace ExcelReport
+namespace SimpleExcelReport
 {
     public interface ITable
     {

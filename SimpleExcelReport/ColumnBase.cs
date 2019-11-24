@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ExcelReport
+namespace SimpleExcelReport
 {
     public abstract class ColumnBase<TRow>
     {

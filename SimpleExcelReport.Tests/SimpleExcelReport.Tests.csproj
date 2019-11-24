@@ -8,8 +8,8 @@
     <ProjectGuid>{EA739A9D-9A11-4FF0-9476-01D77FC06A5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelReport.Tests</RootNamespace>
-    <AssemblyName>ExcelReport.Tests</AssemblyName>
+    <RootNamespace>SimpleExcelReport.Tests</RootNamespace>
+    <AssemblyName>SimpleExcelReport.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -60,9 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExcelReport\ExcelReport.csproj">
+    <ProjectReference Include="..\SimpleExcelReport\SimpleExcelReport.csproj">
       <Project>{21B0BF1C-AE7C-4FAA-B5AE-0C8B8E82E41C}</Project>
-      <Name>ExcelReport</Name>
+      <Name>SimpleExcelReport</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

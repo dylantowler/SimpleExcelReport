@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Office.Interop.Excel;
 
-namespace ExcelReport.Formatters
+namespace SimpleExcelReport.Formatters
 {
     public class TextBold<TRow, TProperty> : CellFormatter<TRow, TProperty, bool>
     {

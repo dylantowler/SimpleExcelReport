@@ -1,4 +1,4 @@
-﻿namespace ExcelReport
+﻿namespace SimpleExcelReport
 {
     public class Group<TRow>
     {

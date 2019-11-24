@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq.Expressions;
-using ExcelReport.Formatters;
+using SimpleExcelReport.Formatters;
 
-namespace ExcelReport
+namespace SimpleExcelReport
 {
     public class Column<TRow, TProperty> : ColumnBase<TRow>
     {

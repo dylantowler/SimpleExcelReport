@@ -3,7 +3,7 @@ using System.Drawing;
 using Microsoft.Office.Interop.Excel;
 using Font = Microsoft.Office.Interop.Excel.Font;
 
-namespace ExcelReport.Formatters
+namespace SimpleExcelReport.Formatters
 {
     public class TextColor<TRow, TProperty> : CellFormatter<TRow, TProperty, Color>
     {

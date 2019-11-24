@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using NUnit.Framework;
 
-namespace ExcelReport.Tests
+namespace SimpleExcelReport.Tests
 {
     public class Examples
     {

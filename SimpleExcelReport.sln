@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelReport", "ExcelReport\ExcelReport.csproj", "{21B0BF1C-AE7C-4FAA-B5AE-0C8B8E82E41C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelReport", "SimpleExcelReport\SimpleExcelReport.csproj", "{21B0BF1C-AE7C-4FAA-B5AE-0C8B8E82E41C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelReport.Tests", "ExcelReport.Tests\ExcelReport.Tests.csproj", "{EA739A9D-9A11-4FF0-9476-01D77FC06A5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleExcelReport.Tests", "SimpleExcelReport.Tests\SimpleExcelReport.Tests.csproj", "{EA739A9D-9A11-4FF0-9476-01D77FC06A5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

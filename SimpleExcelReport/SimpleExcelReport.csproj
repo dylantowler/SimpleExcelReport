@@ -7,8 +7,8 @@
     <ProjectGuid>{21B0BF1C-AE7C-4FAA-B5AE-0C8B8E82E41C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelReport</RootNamespace>
-    <AssemblyName>ExcelReport</AssemblyName>
+    <RootNamespace>SimpleExcelReport</RootNamespace>
+    <AssemblyName>SimpleExcelReport</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

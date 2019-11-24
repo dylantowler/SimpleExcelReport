@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.Office.Interop.Excel;
 
-namespace ExcelReport
+namespace SimpleExcelReport
 {
     public class Table<TRow> : ITable
     {

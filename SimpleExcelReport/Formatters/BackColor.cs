@@ -2,7 +2,7 @@
 using System.Drawing;
 using Microsoft.Office.Interop.Excel;
 
-namespace ExcelReport.Formatters
+namespace SimpleExcelReport.Formatters
 {
     public class BackColor<TRow, TProperty> : CellFormatter<TRow, TProperty, Color>
     {

@@ -1,7 +1,7 @@
-﻿namespace ExcelReport.Tests
-{
-    using NUnit.Framework;
+﻿using NUnit.Framework;
 
+namespace SimpleExcelReport.Tests
+{
     namespace ExcelReport.Tests
     {
         [TestFixture]

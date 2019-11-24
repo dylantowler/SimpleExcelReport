@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Interop.Excel;
 
-namespace ExcelReport.Formatters
+namespace SimpleExcelReport.Formatters
 {
     public class NumberFormat<TRow> : ICellFormatter<TRow>
     {
