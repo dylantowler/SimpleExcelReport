@@ -32,18 +32,45 @@ namespace SimpleExcelReport.Tests
 
         [Test]
         [Category("RequiresExcel")]
-        public void LaunchTestReport()
+        public void SuperSimple()
         {
             List<Student> students = TestData();
 
             Table<Student> studentTable = new Table<Student>(students);
-            studentTable.AddColumn(s => s.Name).SetHeading("Name");
-            studentTable.AddColumn(s => s.Sex.ToString()).SetHeading("Gender");
-            studentTable.AddColumn(s => s.Grades.Math).SetHeading("Math");
-            studentTable.AddColumn(s => s.Grades.English).SetHeading("English");
-            studentTable.AddColumn(s => s.Grades.Science).SetHeading("Science");
-            studentTable.AddColumn(s => s.Grades.Economics).SetHeading("Economics");
-            studentTable.AddColumn(s => s.Grades.History).SetHeading("History");
+            studentTable.AddColumn(s => s.Name);
+            studentTable.AddColumn(s => s.Sex);
+            studentTable.AddColumn(s => s.Grades.Math);
+            studentTable.AddColumn(s => s.Grades.English);
+            studentTable.AddColumn(s => s.Grades.Science);
+            studentTable.AddColumn(s => s.Grades.Economics);
+            studentTable.AddColumn(s => s.Grades.History);
+
+            string tempFilename = Path.GetTempFileName();
+            tempFilename = Path.ChangeExtension(tempFilename, ".xlsx");
+
+            using (Document excelDocument = new Document())
+            {
+                studentTable.Write(excelDocument.Sheet, 1, 1);
+                excelDocument.SaveAs(tempFilename);
+            }
+
+            System.Diagnostics.Process.Start(tempFilename);
+        }
+
+        [Test]
+        [Category("RequiresExcel")]
+        public void CustomStringDisplay()
+        {
+            List<Student> students = TestData();
+
+            Table<Student> studentTable = new Table<Student>(students);
+            studentTable.AddColumn(s => s.Name);
+            studentTable.AddColumn(s => s.Sex).AsString(sex => sex == Sex.F ? "Girl" : "Boy").BackColor((s, g) => g == Sex.F ? Color.Pink : Color.Aqua);
+            studentTable.AddColumn(s => s.Grades.Math);
+            studentTable.AddColumn(s => s.Grades.English);
+            studentTable.AddColumn(s => s.Grades.Science);
+            studentTable.AddColumn(s => s.Grades.Economics);
+            studentTable.AddColumn(s => s.Grades.History);
 
             string tempFilename = Path.GetTempFileName();
             tempFilename = Path.ChangeExtension(tempFilename, ".xlsx");
@@ -72,27 +99,36 @@ namespace SimpleExcelReport.Tests
 
         [Test]
         [Category("RequiresExcel")]
-        public void LaunchSimpleTestReport()
+        public void NumberFormatCustomHeadingBordersGroupHeadingsEtc()
         {
             List<Student> students = TestData();
 
             Table<Student> studentTable = new Table<Student>(students);
-            var name = studentTable.AddColumn(s => s.Name);
-            var sex = studentTable.AddColumn(s => s.Sex).SetHeading("Gender").AsString(SexAsString).BackColor((s, g) => g == Sex.F ? Color.Pink : Color.Aqua);
-            var math = studentTable.AddColumn(s => s.Grades.Math).TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
-            var english = studentTable.AddColumn(s => s.Grades.English).TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
-            var science = studentTable.AddColumn(s => s.Grades.Science).TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
-            var economics = studentTable.AddColumn(s => s.Grades.Economics).TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
-            var history = studentTable.AddColumn(s => s.Grades.History).TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
-
-            studentTable.Group(new ColumnBase<Student>[]{ name, sex }).SetHeading("Student").Border();
-            studentTable.Group(new ColumnBase<Student>[] { math, english, science, economics, history }).SetHeading("Grades").Border();
-
             studentTable.HeadingBorder = true;
+
+            var name = studentTable.AddColumn(s => s.Name);
+            var sex = studentTable.AddColumn(s => s.Sex).SetHeading("Gender").AsString(SexAsString)
+                .BackColor((s, g) => g == Sex.F ? Color.Pink : Color.Aqua);
+            var math = studentTable.AddColumn(s => s.Grades.Math).TextColor((s, g) => g < 50 ? Color.Red : Color.Green)
+                .TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
+            var english = studentTable.AddColumn(s => s.Grades.English)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+            var science = studentTable.AddColumn(s => s.Grades.Science)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+            var economics = studentTable.AddColumn(s => s.Grades.Economics)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+            var history = studentTable.AddColumn(s => s.Grades.History)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+
+            studentTable.Group(new ColumnBase<Student>[] {name, sex}).SetHeading("Student").Border();
+            studentTable.Group(new ColumnBase<Student>[] {math, english, science, economics, history}).SetHeading("Grades").Border();
 
             string tempFilename = Path.GetTempFileName();
             tempFilename = Path.ChangeExtension(tempFilename, ".xlsx");
-
             using (Document excelDocument = new Document())
             {
                 studentTable.Write(excelDocument.Sheet, 2, 2);
@@ -110,11 +146,11 @@ namespace SimpleExcelReport.Tests
                 Sex = Sex.M,
                 Grades = new Grades
                 {
-                    Math = 85,
-                    English = 88,
-                    History = 75,
-                    Economics = 75,
-                    Science = 63
+                    Math = 89,
+                    English = 83,
+                    History = 69,
+                    Economics = 73,
+                    Science = 78
                 }
             },
 
@@ -125,10 +161,10 @@ namespace SimpleExcelReport.Tests
                 Grades = new Grades
                 {
                     Math = 85,
-                    English = 88,
-                    History = 75,
-                    Economics = 75,
-                    Science = 63
+                    English = 41.345,
+                    History = 76,
+                    Economics = 71,
+                    Science = 93
                 }
             },
 
@@ -140,8 +176,8 @@ namespace SimpleExcelReport.Tests
                 {
                     Math = 40,
                     English = 35,
-                    History = 42,
-                    Economics = 24,
+                    History = 53,
+                    Economics = 22,
                     Science = 44
                 }
             },
@@ -152,7 +188,7 @@ namespace SimpleExcelReport.Tests
                 Sex = Sex.F,
                 Grades = new Grades
                 {
-                    Math = 85.00000001,
+                    Math = 77,
                     English = 88.45765786,
                     History = 75.11,
                     Economics = 75.4567,
