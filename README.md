@@ -25,7 +25,7 @@ studentTable.AddColumn(s => s.Grades.Economics);
 studentTable.AddColumn(s => s.Grades.History);
 ```
 
-###Result
+### Result
 ![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/SuperSimple.PNG)
 
 ## Custom display and conditional formatting
@@ -44,7 +44,7 @@ studentTable.AddColumn(s => s.Grades.Economics);
 studentTable.AddColumn(s => s.Grades.History);
 ```
 
-###Result
+### Result
 ![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/CustomStringDisplay.PNG)
 
 ## Excel formatting, borders, group headings and more...
@@ -77,6 +77,6 @@ studentTable.Group(new ColumnBase<Student>[] {name, sex}).SetHeading("Student").
 studentTable.Group(new ColumnBase<Student>[] {math, english, science, economics, history}).SetHeading("Grades").Border();
 ```
 
-###Result
+### Result
 ![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/NumberFormatCustomHeadingBordersGroupHeadingsEtc.PNG)
 
