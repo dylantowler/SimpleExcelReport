@@ -10,6 +10,8 @@ SimpleExcelTable is .Net library that allows you to quickly create tabular Excel
 You can use NuGet to quickly add SimpleExcelTable to your project. Just search for `SimpleExcelTable` and install the package.
 
 ## Super simple example
+
+### Code
 ```c#
 List<Student> students = TestData();
 
@@ -22,9 +24,13 @@ studentTable.AddColumn(s => s.Grades.Science);
 studentTable.AddColumn(s => s.Grades.Economics);
 studentTable.AddColumn(s => s.Grades.History);
 ```
-![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/CustomStringDisplay.PNG)
+
+###Result
+![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/SuperSimple.PNG)
 
 ## Custom display and conditional formatting
+
+### Code
 ```c#
 List<Student> students = TestData();
 
@@ -38,7 +44,11 @@ studentTable.AddColumn(s => s.Grades.Economics);
 studentTable.AddColumn(s => s.Grades.History);
 ```
 
+###Result
+![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/CustomStringDisplay.PNG)
+
 ## Excel formatting, borders, group headings and more...
+### Code
 ```c#
 List<Student> students = TestData();
 
@@ -65,5 +75,8 @@ var history = studentTable.AddColumn(s => s.Grades.History)
 
 studentTable.Group(new ColumnBase<Student>[] {name, sex}).SetHeading("Student").Border();
 studentTable.Group(new ColumnBase<Student>[] {math, english, science, economics, history}).SetHeading("Grades").Border();
-
 ```
+
+###Result
+![alt text](https://github.com/dylantowler/SimpleExcelReport/blob/master/ReadMeImages/NumberFormatCustomHeadingBordersGroupHeadingsEtc.PNG)
+
