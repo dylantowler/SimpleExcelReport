@@ -31,6 +31,7 @@ namespace ExcelReport.Tests
         }
 
         [Test]
+        [Category("RequiresExcel")]
         public void LaunchTestReport()
         {
             List<Student> students = TestData();
@@ -70,6 +71,7 @@ namespace ExcelReport.Tests
         }
 
         [Test]
+        [Category("RequiresExcel")]
         public void LaunchSimpleTestReport()
         {
             List<Student> students = TestData();
