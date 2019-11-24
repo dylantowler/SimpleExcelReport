@@ -1,4 +1,3 @@
-*&^@#H﻿
 using System;
 using Microsoft.Office.Interop.Excel;
 
