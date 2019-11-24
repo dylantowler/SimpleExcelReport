@@ -1,4 +1,5 @@
-﻿using System;
+*&^@#H﻿
+using System;
 using Microsoft.Office.Interop.Excel;
 
 namespace SimpleExcelReport
