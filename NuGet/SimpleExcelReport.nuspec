@@ -14,4 +14,7 @@
   <files>
      <file src="..\SimpleExcelReport\bin\Release\SimpleExcelReport.dll"/>
   </files>
+  <references>
+    <reference file="SimpleExcelReport.dll" />
+  </references>
 </package>
