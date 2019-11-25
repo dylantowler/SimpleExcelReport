@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SimpleExcelReport</id>
+    <version>$version$</version>
+    <authors>Dylan Towler</authors>
+    <licenseUrl>https://github.com/dylantowler/SimpleExcelReport/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/dylantowler/SimpleExcelReport</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SimpleExcelTable is .Net library that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.</description>
+    <copyright>Copyright 2019</copyright>
+    <tags>Excel</tags>
+  </metadata>
+</package>
