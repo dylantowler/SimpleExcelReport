@@ -6,7 +6,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace SimpleExcelReport
 {
-    public class Table<TRow> : ITable
+    public class Table<TRow>
     {
         private readonly List<ColumnBase<TRow>> _columns = new List<ColumnBase<TRow>>();
         private readonly List<Group<TRow>> _groups = new List<Group<TRow>>();
