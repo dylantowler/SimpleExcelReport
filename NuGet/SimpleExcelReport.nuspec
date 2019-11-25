@@ -12,6 +12,6 @@
     <tags>Excel</tags>
   </metadata>
   <files>
-     <file src="..\SimpleExcelReport\bin\Release\SimpleExcelReport.dll"/>
+     <file src="..\SimpleExcelReport\bin\Release\SimpleExcelReport.dll" target="lib"/>
   </files>
 </package>
