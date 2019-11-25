@@ -11,7 +11,7 @@
     <copyright>Copyright 2019</copyright>
     <tags>Excel</tags>
   </metadata>
-    <files>
+  <files>
      <file src="..\SimpleExcelReport\bin\Release\SimpleExcelReport.dll"/>
   </files>
 </package>
