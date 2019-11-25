@@ -11,7 +11,7 @@
     <copyright>Copyright 2019</copyright>
     <tags>Excel</tags>
     <dependencies>
-        <dependency id="Microsoft.Office.Interop.Excel"/>
+        <dependency id="Microsoft.Office.Interop.Excel" version="15.0.4795.1000"/>
     </dependencies>
   </metadata>
   <files>
