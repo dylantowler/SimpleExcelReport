@@ -11,4 +11,7 @@
     <copyright>Copyright 2019</copyright>
     <tags>Excel</tags>
   </metadata>
+    <files>
+     <file src="..\SimpleExcelReport\bin\SimpleExcelReport\MarkdownLog.dll"/>
+  </files>
 </package>
