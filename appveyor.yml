@@ -13,7 +13,6 @@ after_test:
   - ps: .\nuget\pack.ps1
 artifacts:
   - path: '*.nupkg'
-  - path: '*.dll"
 deploy:
   provider: NuGet
   api_key:
