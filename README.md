@@ -2,7 +2,7 @@
 
 # Welcome to the SimpleExcelTable project
 
-SimpleExcelTable is .Net library that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.
+SimpleExcelTable is .NET component that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.
 
 ## Adding SimpleExcelTable to your project
 
