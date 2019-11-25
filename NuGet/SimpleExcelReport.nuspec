@@ -12,6 +12,6 @@
     <tags>Excel</tags>
   </metadata>
     <files>
-     <file src="..\SimpleExcelReport\bin\SimpleExcelReport\MarkdownLog.dll"/>
+     <file src="..\SimpleExcelReport\bin\Release\SimpleExcelReport.dll"/>
   </files>
 </package>
