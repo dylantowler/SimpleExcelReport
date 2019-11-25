@@ -10,6 +10,9 @@
     <description>SimpleExcelTable is a .NET component that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.</description>
     <copyright>Copyright 2019</copyright>
     <tags>Excel</tags>
+    <dependencies>
+        <dependency id="Microsoft.Office.Interop.Excel"/>
+    </dependencies>
   </metadata>
   <files>
      <file src="..\SimpleExcelReport\bin\Release\SimpleExcelReport.dll" target="lib"/>
