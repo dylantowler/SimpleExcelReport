@@ -9,3 +9,5 @@ test:
   categories:
     except:
     - RequiresExcel
+after_test:
+  - ps: .\nuget\pack.ps1
