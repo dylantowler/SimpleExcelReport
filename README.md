@@ -2,7 +2,9 @@
 
 # Welcome to the SimpleExcelReport project
 
-SimpleExcelReport is a .NET component that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.
+SimpleExcelReport is a .NET component that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.
+
+It currently relies on Microsoft Excel Interop but eventually I would like to use something to write the xslx directly so that it can run on servers (and target .NET Standard).  If you would like to help with that then please fork!
 
 ## Adding SimpleExcelReport to your project
 
