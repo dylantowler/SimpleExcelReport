@@ -21,7 +21,7 @@ build_script:
  - choco install "sonarscanner-msbuild-net46" -y
  - SonarScanner.MSBuild.exe begin /k:"SimpleExcelReport" /d:"sonar.host.url=https://sonarcloud.io" /o:"dylantowler" /d:"sonar.login="26dac627a51daf1beaff1428f8abbd4ddf68aba4"
  - msbuild /verbosity:minimal "SimpleExcelReport.sln"
- - SonarScanner.MSBuild.exe end /d:"sonar.login=**26dac627a51daf1beaff1428f8abbd4ddf68aba4**"
+ - SonarScanner.MSBuild.exe end /d:"sonar.login=26dac627a51daf1beaff1428f8abbd4ddf68aba4"
 
 test:
   categories:
