@@ -1,4 +1,8 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/onyfc7crpqfis72h?svg=true)](https://ci.appveyor.com/project/DylanTowler/simpleexcelreport)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=alert_status)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=bugs)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=code_smells)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
 
 # Welcome to the SimpleExcelReport project
 
