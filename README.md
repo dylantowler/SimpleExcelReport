@@ -1,13 +1,13 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/onyfc7crpqfis72h?svg=true)](https://ci.appveyor.com/project/DylanTowler/simpleexcelreport)
 
-# Welcome to the SimpleExcelTable project
+# Welcome to the SimpleExcelReport project
 
-SimpleExcelTable is a .NET component that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.
+SimpleExcelReport is a .NET component that allows you to quickly create tabular Excel reports using a fluent API and conditional formatting.   It currently relies on Microsoft Excel Interop.
 
-## Adding SimpleExcelTable to your project
+## Adding SimpleExcelReport to your project
 
 #### NuGet
-You can use NuGet to quickly add SimpleExcelTable to your project. Just search for `SimpleExcelTable` and install the package.
+You can use NuGet to quickly add SimpleExcelReport to your project. Just search for `SimpleExcelReport` and install the package.
 
 ## Super simple example
 
