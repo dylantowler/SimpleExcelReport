@@ -2,7 +2,7 @@
 
 namespace SimpleExcelReport
 {
-    public interface ICellFormatter<TRow>
+    public interface ICellFormatter<in TRow>
     {
         void SetCellFormat(Range range, TRow row, object value);
     }

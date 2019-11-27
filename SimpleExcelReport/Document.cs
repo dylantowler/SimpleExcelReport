@@ -16,18 +16,17 @@ namespace SimpleExcelReport
             GC.SuppressFinalize(this);
         }
 
-        private Application _excel;
-        private Workbook _workbook;
-        public readonly Worksheet _worksheet;
+        private readonly Workbook _workbook;
+        public readonly Worksheet Worksheet;
 
         public Document()
         {
-            _excel = new Application();
-            _workbook = _excel.Workbooks.Add(Type.Missing);
-            _worksheet = _workbook.ActiveSheet as Worksheet;
+            Application excel = new Application();
+            _workbook = excel.Workbooks.Add(Type.Missing);
+            Worksheet = _workbook.ActiveSheet as Worksheet;
         }
 
-        public Worksheet Sheet => _worksheet;
+        public Worksheet Sheet => Worksheet;
 
         public void SaveAs(string filename)
         {
