@@ -28,7 +28,7 @@ namespace SimpleExcelReport
             return column;
         }
 
-        public void Write(Worksheet worksheet, int originX, int originY)
+        public int Write(Worksheet worksheet, int originX, int originY)
         {
             // Looks like the excel interop stuff is 1 based!
             if (originX < 1) throw new ArgumentOutOfRangeException(nameof(originX), "Excel cell access is 1 based.");
@@ -41,6 +41,8 @@ namespace SimpleExcelReport
             CreateRows(worksheet, originX, ref y);
 
             GroupBorders(worksheet, originX, originY, y - 1);
+
+            return y;
         }
 
         private (int left, int right) GroupSpan(Group<TRow> group)
