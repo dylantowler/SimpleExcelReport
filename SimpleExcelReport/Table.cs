@@ -115,6 +115,7 @@ namespace SimpleExcelReport
                 Range range = worksheet.Range[worksheet.Cells[y, x], worksheet.Cells[y, x]];
                 Font font = range.Font;
                 font.Bold = true;
+                range.HorizontalAlignment = XlHAlign.xlHAlignCenter;
 
                 x++;
             }
