@@ -13,6 +13,7 @@ namespace SimpleExcelReport
         private readonly IEnumerable<TRow> _dataSource;
 
         public bool HeadingBorder { get; set; } = false;
+        public string Title { get; set; }
 
         public Table(IEnumerable<TRow> dataSource)
         {
@@ -83,6 +84,23 @@ namespace SimpleExcelReport
             int x = originX;
 
             bool groupHeading = false;
+
+            if (!string.IsNullOrWhiteSpace(Title))
+            {
+                Range range = worksheet.Range[worksheet.Cells[y, originX], worksheet.Cells[y, originX + _columns.Count - 1]];
+                range.Merge();
+                range.Value = Title;
+                range.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                Font font = range.Font;
+                font.Bold = true;
+
+                if (HeadingBorder)
+                {
+                    range.BorderAround();
+                }
+
+                y++;
+            }
 
             foreach (Group<TRow> group in _groups.Where(g => g.HasHeading))
             {

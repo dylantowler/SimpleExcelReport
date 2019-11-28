@@ -105,6 +105,7 @@ namespace SimpleExcelReport.Tests
 
             Table<Student> studentTable = new Table<Student>(students);
             studentTable.HeadingBorder = true;
+            studentTable.Title = "Exam Results";
 
             var name = studentTable.AddColumn(s => s.Name);
             var sex = studentTable.AddColumn(s => s.Sex).SetHeading("Gender").AsString(SexAsString)
