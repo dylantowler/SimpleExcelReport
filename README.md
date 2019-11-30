@@ -1,4 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/onyfc7crpqfis72h?svg=true)](https://ci.appveyor.com/project/DylanTowler/simpleexcelreport)
+![Nuget](https://img.shields.io/nuget/v/SimpleExcelReport)
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=alert_status)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=bugs)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=SimpleExcelReport&metric=code_smells)](https://sonarcloud.io/dashboard?id=SimpleExcelReport)
