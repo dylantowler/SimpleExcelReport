@@ -57,7 +57,7 @@ namespace SimpleExcelReport
                 if (column.Width != null)
                 {
                     var range = worksheet.Cells[1, x];
-                    range.ColumnWidth = 256;
+                    range.ColumnWidth = column.Width;
                 }
 
                 x++;
