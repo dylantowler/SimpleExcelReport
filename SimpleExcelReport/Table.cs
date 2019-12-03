@@ -37,6 +37,8 @@ namespace SimpleExcelReport
 
             int y = originY;
 
+            SetColumnWidths(worksheet, originX);
+
             CreateHeader(worksheet, originX, ref y);
 
             CreateRows(worksheet, originX, ref y);
@@ -44,6 +46,22 @@ namespace SimpleExcelReport
             GroupBorders(worksheet, originX, originY, y - 1);
 
             return y;
+        }
+
+        private void SetColumnWidths(Worksheet worksheet, int originX)
+        {
+            int x = originX;
+
+            foreach (ColumnBase<TRow> column in _columns)
+            {
+                if (column.Width != null)
+                {
+                    var range = worksheet.Cells[1, x];
+                    range.ColumnWidth = 256;
+                }
+
+                x++;
+            }
         }
 
         private (int left, int right) GroupSpan(Group<TRow> group)

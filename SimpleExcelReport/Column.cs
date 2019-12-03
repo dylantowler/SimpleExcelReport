@@ -34,6 +34,16 @@ namespace SimpleExcelReport
             return this;
         }
 
+        /// <summary>
+        /// Excel interop throws if width > 255 hence parameter being a byte
+        /// </summary>
+        public Column<TRow, TProperty> SetWidth(byte width)
+        {
+            Width = width;
+
+            return this;
+        }
+
         public Column<TRow, TProperty> TextBold(Func<TRow, TProperty, bool> textBold)
         {
             TextBold<TRow, TProperty> formatter = new TextBold<TRow, TProperty>(textBold);

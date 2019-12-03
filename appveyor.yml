@@ -34,8 +34,8 @@ after_test:
 artifacts:
   - path: '*.nupkg'
 
-# deploy:
-  # provider: NuGet
-  # api_key:
-    # secure: I1v6kjAxV9OU3tuJ7U6RJjji3Rnrcf7jzQpw89YKEiqEDyD3xieqNHV7VRCfjSCC
-  # artifact: /.*\.nupkg/
+deploy:
+  provider: NuGet
+  api_key:
+    secure: I1v6kjAxV9OU3tuJ7U6RJjji3Rnrcf7jzQpw89YKEiqEDyD3xieqNHV7VRCfjSCC
+  artifact: /.*\.nupkg/
