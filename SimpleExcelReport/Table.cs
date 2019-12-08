@@ -14,6 +14,7 @@ namespace SimpleExcelReport
 
         public bool HeadingBorder { get; set; } = false;
         public string Title { get; set; }
+        public int ColumnCount => _columns.Count;
 
         public Table(IEnumerable<TRow> dataSource)
         {
