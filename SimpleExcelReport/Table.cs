@@ -192,7 +192,7 @@ namespace SimpleExcelReport
 
         public Group<TRow> Group(ColumnBase<TRow>[] columns)
         {
-            if (!columns.Select(c => _columns.IndexOf(c)).Contiguous())
+            if (!columns.Where(c => c != null).Select(c => _columns.IndexOf(c)).Contiguous())
             {
                 throw new ArgumentException("Column grouping must contain contiguous columns.", nameof(columns));
             }
