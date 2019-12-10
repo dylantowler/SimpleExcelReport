@@ -139,6 +139,48 @@ namespace SimpleExcelReport.Tests
             System.Diagnostics.Process.Start(tempFilename);
         }
 
+        [Test]
+        [Category("RequiresExcel")]
+        public void HasNullColumnInGroup()
+        {
+            List<Student> students = TestData();
+
+            Table<Student> studentTable = new Table<Student>(students);
+            studentTable.HeadingBorder = true;
+            studentTable.Title = "Exam Results";
+
+            var name = studentTable.AddColumn(s => s.Name);
+            var sex = studentTable.AddColumn(s => s.Sex).SetHeading("Gender").AsString(SexAsString)
+                .BackColor((s, g) => g == Sex.F ? Color.Pink : Color.Aqua);
+            var math = studentTable.AddColumn(s => s.Grades.Math).TextColor((s, g) => g < 50 ? Color.Red : Color.Green)
+                .TextBold((s, g) => g > 80).NumberFormat("#0.00\"%\"");
+            var english = studentTable.AddColumn(s => s.Grades.English)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+            var science = studentTable.AddColumn(s => s.Grades.Science)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+            var economics = studentTable.AddColumn(s => s.Grades.Economics)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+            var history = studentTable.AddColumn(s => s.Grades.History)
+                .TextColor((s, g) => g < 50 ? Color.Red : Color.Green).TextBold((s, g) => g > 80)
+                .NumberFormat("#0.00\"%\"");
+
+            studentTable.Group(new ColumnBase<Student>[] { name, sex }).SetHeading("Student").Border();
+            studentTable.Group(new ColumnBase<Student>[] { math, english, science, economics, history, null }).SetHeading("Grades").Border();
+
+            string tempFilename = Path.GetTempFileName();
+            tempFilename = Path.ChangeExtension(tempFilename, ".xlsx");
+            using (Document excelDocument = new Document())
+            {
+                studentTable.Write(excelDocument.Sheet, 2, 2);
+                excelDocument.SaveAs(tempFilename);
+            }
+
+            System.Diagnostics.Process.Start(tempFilename);
+        }
+
         private static List<Student> TestData() => new List<Student>
         {
             new Student

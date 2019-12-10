@@ -197,7 +197,7 @@ namespace SimpleExcelReport
                 throw new ArgumentException("Column grouping must contain contiguous columns.", nameof(columns));
             }
 
-            Group<TRow> group = new Group<TRow>(columns);
+            Group<TRow> group = new Group<TRow>(columns.Where(c => c != null).ToArray());
 
             _groups.Add(group);
 
