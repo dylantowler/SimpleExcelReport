@@ -18,7 +18,7 @@ namespace SimpleExcelReport
 
         public Table(IEnumerable<TRow> dataSource)
         {
-            _dataSource = dataSource;
+            _dataSource = dataSource ?? throw new ArgumentNullException(nameof(dataSource));
         }
 
         public Column<TRow, TProperty> AddColumn<TProperty>(Expression<Func<TRow, TProperty>> memberExpression)
