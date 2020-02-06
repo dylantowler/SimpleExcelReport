@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SimpleExcelReport
 {
     public abstract class ColumnBase<TRow>
     {
+        public abstract Type PropertyType { get; }
         public abstract bool Empty(TRow row);
         public abstract object GetDisplayValue(TRow row);
         public abstract object GetValue(TRow row);

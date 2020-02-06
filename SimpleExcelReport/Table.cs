@@ -8,13 +8,13 @@ namespace SimpleExcelReport
 {
     public class Table<TRow>
     {
-        private readonly List<ColumnBase<TRow>> _columns = new List<ColumnBase<TRow>>();
         private readonly List<Group<TRow>> _groups = new List<Group<TRow>>();
         private readonly IEnumerable<TRow> _dataSource;
 
         public bool HeadingBorder { get; set; } = false;
         public string Title { get; set; }
-        public int ColumnCount => _columns.Count;
+        public int ColumnCount => Columns.Count;
+        public List<ColumnBase<TRow>> Columns { get; } = new List<ColumnBase<TRow>>();
 
         public Table(IEnumerable<TRow> dataSource)
         {
@@ -25,7 +25,7 @@ namespace SimpleExcelReport
         {
             Column<TRow, TProperty> column = new Column<TRow, TProperty>(memberExpression);
 
-            _columns.Add(column);
+            Columns.Add(column);
 
             return column;
         }
@@ -53,7 +53,7 @@ namespace SimpleExcelReport
         {
             int x = originX;
 
-            foreach (ColumnBase<TRow> column in _columns)
+            foreach (ColumnBase<TRow> column in Columns)
             {
                 if (column.Width != null)
                 {
@@ -67,8 +67,8 @@ namespace SimpleExcelReport
 
         private (int left, int right) GroupSpan(Group<TRow> group)
         {
-            int left = group.Columns.Min(c => _columns.IndexOf(c));
-            int right = group.Columns.Max(c => _columns.IndexOf(c));
+            int left = group.Columns.Min(c => Columns.IndexOf(c));
+            int right = group.Columns.Max(c => Columns.IndexOf(c));
 
             return (left, right);
         }
@@ -106,7 +106,7 @@ namespace SimpleExcelReport
 
             if (!string.IsNullOrWhiteSpace(Title))
             {
-                Range range = worksheet.Range[worksheet.Cells[y, originX], worksheet.Cells[y, originX + _columns.Count - 1]];
+                Range range = worksheet.Range[worksheet.Cells[y, originX], worksheet.Cells[y, originX + Columns.Count - 1]];
                 range.Merge();
                 range.Value = Title;
                 range.HorizontalAlignment = XlHAlign.xlHAlignCenter;
@@ -143,7 +143,7 @@ namespace SimpleExcelReport
                 y++;
             }
 
-            foreach (ColumnBase<TRow> tableColumn in _columns)
+            foreach (ColumnBase<TRow> tableColumn in Columns)
             {
                 // Set header value
                 dynamic cell = worksheet.Cells[y, x];
@@ -172,7 +172,7 @@ namespace SimpleExcelReport
             {
                 int x = originX;
 
-                foreach (ColumnBase<TRow> tableColumn in _columns)
+                foreach (ColumnBase<TRow> tableColumn in Columns)
                 {
                     dynamic cell = worksheet.Cells[y, x];
                     if (!tableColumn.Empty(row))
@@ -196,7 +196,7 @@ namespace SimpleExcelReport
 
         public Group<TRow> Group(ColumnBase<TRow>[] columns)
         {
-            if (!columns.Where(c => c != null).Select(c => _columns.IndexOf(c)).Contiguous())
+            if (!columns.Where(c => c != null).Select(c => Columns.IndexOf(c)).Contiguous())
             {
                 throw new ArgumentException("Column grouping must contain contiguous columns.", nameof(columns));
             }

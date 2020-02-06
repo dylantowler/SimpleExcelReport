@@ -111,5 +111,7 @@ namespace SimpleExcelReport
         }
 
         public override object GetValue(TRow row) => _getter(row);
+
+        public override Type PropertyType => typeof(TProperty);
     }
 }
