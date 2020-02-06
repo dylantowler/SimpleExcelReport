@@ -9,6 +9,7 @@ namespace SimpleExcelReport
     {
         private readonly Func<TRow, TProperty> _getter;
         private Func<TProperty, string> _stringConverter;
+        private Func<TRow, bool> _emptyWhen;
 
         public Column(Expression<Func<TRow, TProperty>> expression)
         {
@@ -69,6 +70,18 @@ namespace SimpleExcelReport
             Formatters.Add(formatter);
 
             return this;
+        }
+
+        public Column<TRow, TProperty> EmptyWhen(Func<TRow, bool> emptyWhen)
+        {
+            _emptyWhen = emptyWhen;
+
+            return this;
+        }
+
+        public override bool Empty(TRow row)
+        {
+            return _emptyWhen?.Invoke(row) == true;
         }
 
         public Column<TRow, TProperty> AsString(Func<TProperty, string> toString)

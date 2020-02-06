@@ -175,7 +175,11 @@ namespace SimpleExcelReport
                 foreach (ColumnBase<TRow> tableColumn in _columns)
                 {
                     dynamic cell = worksheet.Cells[y, x];
-                    cell.Value = tableColumn.GetDisplayValue(row);
+                    if (!tableColumn.Empty(row))
+                    {
+                        cell.Value = tableColumn.GetDisplayValue(row);
+                    }
+
                     Range range = worksheet.Range[worksheet.Cells[y, x], worksheet.Cells[y, x]];
 
                     foreach (ICellFormatter<TRow> formatter in tableColumn.Formatters)
